@@ -44,6 +44,15 @@ const SolutionSection = () => {
 
   return (
     <section ref={ref} className="relative py-24 bg-background overflow-hidden">
+      {/* Dino in background */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 lg:right-[5%] pointer-events-none opacity-15 lg:opacity-25">
+        <img
+          src={dinoCelebrating}
+          alt=""
+          className="w-[250px] md:w-[350px] lg:w-[400px]"
+        />
+      </div>
+
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -68,7 +77,7 @@ const SolutionSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Features Grid */}
           <div className="grid sm:grid-cols-2 gap-4">
             {features.map((feature, index) => (
@@ -92,66 +101,44 @@ const SolutionSection = () => {
             ))}
           </div>
 
-          {/* Dino and gamification showcase */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative flex justify-center">
-              <motion.img
-                src={dinoCelebrating}
-                alt="Dino feiert den Fortschritt"
-                className="w-56 md:w-72 drop-shadow-xl"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* Progress card */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.6, type: "spring" }}
-                className="absolute top-0 -left-4 md:left-0 bg-card rounded-2xl p-4 shadow-elevated"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Dein Level</p>
-                    <p className="font-display font-bold text-foreground">Level 7</p>
-                  </div>
+          {/* Gamification showcase */}
+          <div className="space-y-6">
+            {/* Progress card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 0.4 }}
+              className="bg-card rounded-2xl p-6 shadow-elevated"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
-                <div className="w-32 h-2 bg-muted rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: "70%" } : {}}
-                    transition={{ delay: 1, duration: 1 }}
-                    className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
-                  />
+                <div>
+                  <p className="text-sm text-muted-foreground">Dein Level</p>
+                  <p className="font-display font-bold text-xl text-foreground">Level 7</p>
                 </div>
-                <p className="text-xs text-muted-foreground mt-1">700/1000 XP</p>
-              </motion.div>
-
-              {/* XP popup */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.8 }}
-                className="absolute -top-4 right-0 md:right-4 bg-accent text-accent-foreground rounded-full px-4 py-2 shadow-soft"
-              >
-                <span className="font-display font-bold text-sm">+50 XP</span>
-              </motion.div>
-            </div>
+                <div className="ml-auto bg-accent text-accent-foreground rounded-full px-4 py-2">
+                  <span className="font-display font-bold text-sm">+50 XP</span>
+                </div>
+              </div>
+              <div className="w-full h-3 bg-muted rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: "70%" } : {}}
+                  transition={{ delay: 0.8, duration: 1 }}
+                  className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
+                />
+              </div>
+              <p className="text-sm text-muted-foreground mt-2">700/1000 XP bis Level 8</p>
+            </motion.div>
 
             {/* Badges row */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.7 }}
-              className="mt-8 bg-card rounded-3xl p-6 shadow-soft"
+              transition={{ delay: 0.5 }}
+              className="bg-card rounded-3xl p-6 shadow-soft"
             >
               <div className="flex items-center gap-2 mb-4">
                 <Award className="w-5 h-5 text-primary" />
@@ -163,7 +150,7 @@ const SolutionSection = () => {
                     key={badge.name}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.9 + index * 0.1, type: "spring" }}
+                    transition={{ delay: 0.7 + index * 0.1 }}
                     className={`text-center ${index > 1 ? "opacity-40" : ""}`}
                   >
                     <div className="w-14 h-14 bg-secondary rounded-2xl flex items-center justify-center mb-2 mx-auto">
@@ -175,7 +162,7 @@ const SolutionSection = () => {
                 ))}
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

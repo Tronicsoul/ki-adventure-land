@@ -7,40 +7,29 @@ import dinoWaving from "@/assets/dino-waving.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      {/* Animated background blobs */}
+      {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 blob"
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 10, 0],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/2 -left-32 w-80 h-80 bg-accent/20 blob"
-          animate={{
-            scale: [1, 1.15, 1],
-            rotate: [0, -10, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-1/4 w-64 h-64 bg-pastel-yellow/40 blob"
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 blob" />
+        <div className="absolute top-1/2 -left-32 w-80 h-80 bg-accent/20 blob" />
+        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-pastel-yellow/40 blob" />
+      </div>
+
+      {/* Dino in background - positioned behind content */}
+      <div className="absolute right-0 bottom-0 lg:right-[10%] lg:bottom-[5%] pointer-events-none opacity-30 lg:opacity-50">
+        <img
+          src={dinoWaving}
+          alt=""
+          className="w-[300px] md:w-[400px] lg:w-[500px]"
         />
       </div>
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-3xl mx-auto lg:mx-0">
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
             <motion.div
@@ -117,62 +106,6 @@ const HeroSection = () => {
               </div>
             </motion.div>
           </motion.div>
-
-          {/* Dino Mascot */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
-            >
-              <img
-                src={dinoWaving}
-                alt="Dino Maskottchen winkt"
-                className="w-72 md:w-96 lg:w-[450px] drop-shadow-2xl"
-              />
-              
-              {/* Speech bubble */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, type: "spring", bounce: 0.5 }}
-                className="absolute -top-4 -right-4 md:top-0 md:right-0 bg-card rounded-3xl p-4 shadow-card max-w-[200px]"
-              >
-                <p className="text-sm font-semibold text-foreground">
-                  Hey! Ich bin Dino, dein Guide! 🦖
-                </p>
-                <div className="absolute bottom-0 left-8 w-4 h-4 bg-card transform rotate-45 translate-y-2" />
-              </motion.div>
-            </motion.div>
-
-            {/* Floating elements */}
-            <motion.div
-              animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-10 left-10 bg-pastel-pink rounded-2xl p-3 shadow-soft"
-            >
-              <span className="text-2xl">🎯</span>
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, -8, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute bottom-20 left-0 bg-pastel-blue rounded-2xl p-3 shadow-soft"
-            >
-              <span className="text-2xl">🛡️</span>
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, -12, 0], rotate: [0, 3, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-10 right-10 bg-pastel-green rounded-2xl p-3 shadow-soft"
-            >
-              <span className="text-2xl">⭐</span>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
 
@@ -180,23 +113,15 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-muted-foreground"
-        >
+        <div className="flex flex-col items-center gap-2 text-muted-foreground">
           <span className="text-sm font-medium">Scroll nach unten</span>
           <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-primary rounded-full"
-            />
+            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

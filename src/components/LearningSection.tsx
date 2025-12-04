@@ -46,12 +46,14 @@ const LearningSection = () => {
 
   return (
     <section ref={ref} className="relative py-24 bg-secondary overflow-hidden">
-      {/* Decorative elements */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="absolute top-20 right-10 w-32 h-32 border-4 border-dashed border-primary/20 rounded-full"
-      />
+      {/* Dino in background */}
+      <div className="absolute left-0 top-1/4 lg:left-[3%] pointer-events-none opacity-15 lg:opacity-20">
+        <img
+          src={dinoTeaching}
+          alt=""
+          className="w-[200px] md:w-[300px] lg:w-[350px]"
+        />
+      </div>
 
       <div className="container relative z-10">
         {/* Header */}
@@ -153,45 +155,23 @@ const LearningSection = () => {
             </motion.div>
           </div>
 
-          {/* Dino Teaching */}
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center lg:items-start gap-6"
           >
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <img
-                src={dinoTeaching}
-                alt="Dino erklärt Lerninhalte"
-                className="w-48 md:w-64 drop-shadow-xl"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.6, type: "spring" }}
-              className="bg-card rounded-3xl p-5 shadow-card -mt-4 max-w-xs text-center"
-            >
+            <div className="bg-card rounded-3xl p-6 shadow-card max-w-xs text-center">
               <p className="font-semibold text-foreground mb-2">
                 "Mit etwas Übung erkennst du jeden Fake!"
               </p>
               <p className="text-sm text-muted-foreground">
                 – Dino, dein Security-Coach
               </p>
-            </motion.div>
+            </div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.8 }}
-              className="grid grid-cols-2 gap-4 mt-6 w-full max-w-xs"
-            >
+            <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
               <div className="bg-card rounded-2xl p-4 text-center shadow-soft">
                 <p className="text-2xl font-display font-bold text-primary">12+</p>
                 <p className="text-xs text-muted-foreground">Module</p>
@@ -200,7 +180,7 @@ const LearningSection = () => {
                 <p className="text-2xl font-display font-bold text-accent">50+</p>
                 <p className="text-xs text-muted-foreground">Übungen</p>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
