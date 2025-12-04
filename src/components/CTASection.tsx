@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Rocket, ArrowRight, Users, Building2, Sparkles } from "lucide-react";
 import dinoWaving from "@/assets/dino-waving.png";
@@ -108,10 +109,12 @@ const CTASection = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button variant="playful" size="xl" className="group">
-                  Kostenlos testen
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Button>
+                <Link to="/quiz">
+                  <Button variant="playful" size="xl" className="group">
+                    Kostenlos testen
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
                 <Button variant="outline" size="lg">
                   Demo anfragen
                 </Button>

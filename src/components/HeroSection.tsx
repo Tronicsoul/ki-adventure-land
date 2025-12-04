@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Play, Sparkles } from "lucide-react";
 import dinoWaving from "@/assets/dino-waving.png";
@@ -80,10 +81,12 @@ const HeroSection = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button variant="playful" size="xl" className="group">
-                <Play className="w-5 h-5 transition-transform group-hover:scale-110" />
-                Jetzt die Demo spielen
-              </Button>
+              <Link to="/quiz">
+                <Button variant="playful" size="xl" className="group">
+                  <Play className="w-5 h-5 transition-transform group-hover:scale-110" />
+                  Jetzt die Demo spielen
+                </Button>
+              </Link>
               <Button variant="outline" size="lg">
                 Mehr erfahren
               </Button>
