@@ -70,15 +70,17 @@ const HeroSection = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Link to="/quiz">
+              <Link to="/story">
                 <Button variant="playful" size="xl" className="group">
                   <Play className="w-5 h-5 transition-transform group-hover:scale-110" />
-                  Jetzt die Demo spielen
+                  Story-Modus starten
                 </Button>
               </Link>
-              <Button variant="outline" size="lg">
-                Mehr erfahren
-              </Button>
+              <Link to="/quiz">
+                <Button variant="outline" size="lg">
+                  Fake vs. Echt Quiz
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Trust badges */}
