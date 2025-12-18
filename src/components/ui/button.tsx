@@ -22,7 +22,7 @@ const buttonVariants = cva(
         link:
           "text-primary underline-offset-4 hover:underline",
         playful:
-          "bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-button hover:scale-110 hover:-translate-y-2 active:scale-95 rounded-full animate-pulse-glow",
+          "bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-button hover:scale-105 hover:-translate-y-1 active:scale-95 rounded-full",
         accent:
           "bg-accent text-accent-foreground shadow-soft hover:scale-105 hover:-translate-y-1 active:scale-95 rounded-full",
         dino:
