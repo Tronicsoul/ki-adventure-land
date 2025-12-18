@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle, Trophy, RotateCcw, Sparkles } from "lucide-react";
+import aiPortrait1 from "@/assets/ai-portrait-1.png";
+import aiPortrait2 from "@/assets/ai-portrait-2.png";
 
 interface QuizQuestion {
   id: number;
@@ -11,7 +13,7 @@ interface QuizQuestion {
   hint: string;
 }
 
-const quizQuestions: QuizQuestion[] = [
+const baseQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
@@ -46,14 +48,39 @@ const quizQuestions: QuizQuestion[] = [
     isReal: true,
     explanation: "Dieses Foto zeigt eine echte Person - die Augenreflexionen und Hauttextur sind authentisch.",
     hint: "Augenreflexionen prüfen!"
+  },
+  {
+    id: 6,
+    image: aiPortrait1,
+    isReal: false,
+    explanation: "Dieses Bild wurde von KI generiert! Achte auf die zu perfekte Haut und die leicht unnatürlichen Augendetails.",
+    hint: "Zu perfekte Haut ist verdächtig"
+  },
+  {
+    id: 7,
+    image: aiPortrait2,
+    isReal: false,
+    explanation: "Ein KI-generiertes Portrait! Die Haare und der Hintergrund zeigen typische KI-Artefakte.",
+    hint: "Überprüfe Haardetails genau"
   }
 ];
+
+// Shuffle function
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 interface QuizGameProps {
   onClose?: () => void;
 }
 
 const QuizGame = ({ onClose }: QuizGameProps) => {
+  const quizQuestions = useMemo(() => shuffleArray(baseQuizQuestions), []);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
