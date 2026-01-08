@@ -6,113 +6,74 @@
 
 @layer base {
   :root {
-    /* Junior Schokolade / Kinder inspired color palette */
-    --background: 40 50% 97%;
-    --foreground: 25 40% 20%;
+    /* Google Chrome Dark Mode Palette */
+    /* Background: #202124 */
+    --background: 225 6% 13%; 
+    /* Text: #e8eaed */
+    --foreground: 210 9% 92%;
 
-    --card: 40 45% 95%;
-    --card-foreground: 25 40% 20%;
+    /* Card/Surface: #292a2d (Lighter than bg) */
+    --card: 225 5% 17%;
+    --card-foreground: 210 9% 92%;
 
-    --popover: 40 50% 97%;
-    --popover-foreground: 25 40% 20%;
+    /* Popovers usually match card surface */
+    --popover: 225 5% 17%;
+    --popover-foreground: 210 9% 92%;
 
-    /* Primary: Warm Orange (Kinder/Junior Orange) */
-    --primary: 28 90% 55%;
-    --primary-foreground: 40 50% 98%;
+    /* Primary: #8ab4f8 (Google Blue Light) */
+    --primary: 217 89% 76%;
+    /* Text on primary: Dark grey/black */
+    --primary-foreground: 225 6% 13%;
 
-    /* Secondary: Cream/Vanilla */
-    --secondary: 45 60% 92%;
-    --secondary-foreground: 25 40% 25%;
+    /* Secondary: #3c4043 (Darker interactive elements) */
+    --secondary: 210 6% 25%;
+    --secondary-foreground: 210 9% 92%;
 
-    /* Muted: Light cream */
-    --muted: 40 40% 90%;
-    --muted-foreground: 25 25% 45%;
+    /* Muted: #3c4043 or similar for less emphasis */
+    --muted: 210 6% 25%;
+    /* Muted text: #9aa0a6 */
+    --muted-foreground: 210 5% 63%;
 
-    /* Accent: Soft teal (Dino color) */
-    --accent: 155 45% 55%;
-    --accent-foreground: 40 50% 98%;
+    /* Accent: #35363a (Hover states) */
+    /* --accent: 228 5% 22%; */
+    --accent: rgb(176, 166, 166);
+    --accent-foreground: 210 9% 92%;
 
-    /* Chocolate Brown */
-    --chocolate: 25 50% 30%;
-    --chocolate-foreground: 40 50% 95%;
+    /* Destructive: #f28b82 (Google Red Light) */
+    --destructive: 0 81% 73%;
+    --destructive-foreground: 225 6% 13%;
 
-    /* Pastel colors for gamification */
-    --pastel-pink: 350 70% 85%;
-    --pastel-blue: 200 70% 85%;
-    --pastel-green: 140 50% 80%;
-    --pastel-yellow: 45 90% 85%;
-    --pastel-purple: 270 50% 85%;
+    /* Borders: #5f6368 (Visible but subtle) */
+    --border: 216 3% 37%;
+    --input: 216 3% 37%;
+    
+    /* Ring: Google Blue */
+    --ring: 217 89% 76%;
 
-    /* Dino green */
-    --dino: 145 50% 60%;
-    --dino-foreground: 40 50% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 35 30% 85%;
-    --input: 35 30% 85%;
-    --ring: 28 90% 55%;
-
-    --radius: 1rem;
-
-    /* Custom shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(25 40% 20% / 0.1);
-    --shadow-card: 0 8px 30px -8px hsl(25 40% 20% / 0.15);
-    --shadow-button: 0 4px 12px -2px hsl(28 90% 55% / 0.4);
-    --shadow-elevated: 0 12px 40px -12px hsl(25 40% 20% / 0.2);
-
-    /* Sidebar */
-    --sidebar-background: 40 50% 97%;
-    --sidebar-foreground: 25 40% 20%;
-    --sidebar-primary: 28 90% 55%;
-    --sidebar-primary-foreground: 40 50% 98%;
-    --sidebar-accent: 155 45% 55%;
-    --sidebar-accent-foreground: 40 50% 98%;
-    --sidebar-border: 35 30% 85%;
-    --sidebar-ring: 28 90% 55%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 25 30% 12%;
-    --foreground: 40 50% 95%;
-
-    --card: 25 25% 16%;
-    --card-foreground: 40 50% 95%;
-
-    --popover: 25 30% 12%;
-    --popover-foreground: 40 50% 95%;
-
-    --primary: 28 85% 55%;
-    --primary-foreground: 25 30% 10%;
-
-    --secondary: 25 25% 20%;
-    --secondary-foreground: 40 50% 90%;
-
-    --muted: 25 20% 22%;
-    --muted-foreground: 35 20% 60%;
-
-    --accent: 155 40% 45%;
-    --accent-foreground: 40 50% 98%;
-
-    --chocolate: 25 45% 70%;
-    --chocolate-foreground: 25 30% 12%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 25 20% 25%;
-    --input: 25 20% 25%;
-    --ring: 28 85% 55%;
-
-    --sidebar-background: 25 30% 12%;
-    --sidebar-foreground: 40 50% 95%;
-    --sidebar-primary: 28 85% 55%;
-    --sidebar-primary-foreground: 25 30% 10%;
-    --sidebar-accent: 155 40% 45%;
-    --sidebar-accent-foreground: 40 50% 98%;
-    --sidebar-border: 25 20% 25%;
-    --sidebar-ring: 28 85% 55%;
+    /* Ensure dark mode class uses the same palette if toggled */
+    --background: 225 6% 13%;
+    --foreground: 210 9% 92%;
+    --card: 225 5% 17%;
+    --card-foreground: 210 9% 92%;
+    --popover: 225 5% 17%;
+    --popover-foreground: 210 9% 92%;
+    --primary: 217 89% 76%;
+    --primary-foreground: 225 6% 13%;
+    --secondary: 210 6% 25%;
+    --secondary-foreground: 210 9% 92%;
+    --muted: 210 6% 25%;
+    --muted-foreground: 210 5% 63%;
+    --accent: 228 5% 22%;
+    --accent-foreground: 210 9% 92%;
+    --destructive: 0 81% 73%;
+    --destructive-foreground: 225 6% 13%;
+    --border: 216 3% 37%;
+    --input: 216 3% 37%;
+    --ring: 217 89% 76%;
   }
 }
 
@@ -120,19 +81,15 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground font-body antialiased;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold;
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-accent to-dino bg-clip-text text-transparent;
+    /* @apply bg-gradient-to-r from-primary via-accent to-dino bg-clip-text text-transparent; */
+    @apply bg-gradient-to-r from-primary via-accent to-dino bg-clip-text;
   }
 
   .card-playful {
