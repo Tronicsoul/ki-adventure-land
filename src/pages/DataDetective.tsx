@@ -17,7 +17,7 @@ const DataDetective = () => {
             <nav className="hidden md:flex gap-6">
                 <NavLink to="/" className="text-slate-400 hover:text-white transition-colors">Home</NavLink>
                 <NavLink to="/quiz" className="text-slate-400 hover:text-white transition-colors">Quiz</NavLink>
-                <NavLink to="/story" className="text-slate-400 hover:text-white transition-colors">Story</NavLink>
+                <NavLink to="/story-detective" className="text-slate-400 hover:text-white transition-colors">Detective Storymode</NavLink>
             </nav>
         </header>
 

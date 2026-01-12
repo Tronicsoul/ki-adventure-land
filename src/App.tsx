@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Quiz from "./pages/Quiz";
 import StoryMode from "./pages/StoryMode";
 import DataDetective from "./pages/DataDetective"; // <--- NEUER IMPORT
+import DetectiveStory from "./pages/DetectiveStory"
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/story" element={<StoryMode />} />
-          <Route path="/detective" element={<DataDetective />} /> {/* <--- NEUE ROUTE */}
+          <Route path="/detective" element={<DataDetective />} /> 
+          <Route path="/story-detective" element={<DetectiveStory />} /> 
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
