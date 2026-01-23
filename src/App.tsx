@@ -9,6 +9,7 @@ import Quiz from "./pages/Quiz";
 import StoryMode from "./pages/StoryMode";
 import DataDetective from "./pages/DataDetective"; // <--- NEUER IMPORT
 import DetectiveStory from "./pages/DetectiveStory"
+import PixelArtGame from "./pages/PixelArtGame"
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/story" element={<StoryMode />} />
           <Route path="/detective" element={<DataDetective />} /> 
           <Route path="/story-detective" element={<DetectiveStory />} /> 
+          <Route path="/game" element={<PixelArtGame />} /> 
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
