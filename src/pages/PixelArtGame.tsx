@@ -42,7 +42,7 @@ const DigitalDeception: React.FC = () => {
     const player: Player = { x: 200, y: 350, speed: 2, step: 0 };
     
     const npcDialog = {
-      Finance: "Gut das du da bist ich brauche dringend deine Hilfe ich bin mir nicht sicher ob die E-mail vertrauenswürdig ist.",
+      Finance: "Gut das du da bist.Ich bin mir nicht sicher ob die E-mail vertrauenswürdig ist.",
       HR: "Ungewöhnliche Anfragen zu Mitarbeiterdaten immer verifizieren."
     };
 
