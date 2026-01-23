@@ -43,7 +43,7 @@ const DigitalDeception: React.FC = () => {
     
     const npcDialog = {
       Finance: "Gut das du da bist.Ich bin mir nicht sicher ob die E-mail vertrauenswürdig ist.",
-      HR: "Ungewöhnliche Anfragen zu Mitarbeiterdaten immer verifizieren."
+      HR: "Ich glaube unser Finanzler sucht dich.."
     };
 
     const buildings: Building[] = [];
