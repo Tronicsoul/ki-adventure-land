@@ -8,8 +8,8 @@ import NotFound from "./pages/NotFound";
 import Quiz from "./pages/Quiz";
 import StoryMode from "./pages/StoryMode";
 import DataDetective from "./pages/DataDetective"; // <--- NEUER IMPORT
-import DetectiveStory from "./pages/DetectiveStory"
-import PixelArtGame from "./pages/PixelArtGame"
+import DetectiveStory from "./pages/DetectiveStory";
+import PixelArtGame from "./pages/PixelArtGame";
 
 const queryClient = new QueryClient();
 
