@@ -22,7 +22,7 @@ interface Building extends Entity {
   h: number;
 }
 
-const DigitalDeception: React.FC = () => {
+const PixelArtGame: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestRef = useRef<number>();
 
@@ -252,4 +252,4 @@ const DigitalDeception: React.FC = () => {
   );
 };
 
-export default DigitalDeception;
+export default PixelArtGame;
