@@ -27,19 +27,16 @@ const HeroSection = () => {
                   Quiz spielen
                 </Button>
               </Link>
-              {/* NEUER BUTTON */}
               <Link to="/detective">
                 <Button variant="secondary" size="lg" className="text-lg px-8 py-6 rounded-full border-2 border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700">
                   Detektiv-Büro
                 </Button>
               </Link>
-              <div style={{ display: "none" }}>
-                <Link to="/game">
-                  <Button variant="secondary" size="lg" className="text-lg px-8 py-6 rounded-full border-2 border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700">
-                    Play a Game
-                  </Button>
-                </Link>
-              </div>
+              <Link to="/game">
+                <Button variant="secondary" size="lg" className="text-lg px-8 py-6 rounded-full border-2 border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700">
+                  Play a Game
+                </Button>
+              </Link>
             </div>
           </div>
           
