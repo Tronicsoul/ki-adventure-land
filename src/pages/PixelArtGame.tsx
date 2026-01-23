@@ -166,6 +166,11 @@ const DigitalDeception: React.FC = () => {
           }
         }
       }
+
+      //temp fix
+      if (e.key === "x"){
+        window.open("./story-detective");
+      }
     };
 
     const handleKeyUp = (e: KeyboardEvent) => {
@@ -202,7 +207,6 @@ const DigitalDeception: React.FC = () => {
         ctx.font = "13px Arial"; // Ensure font is set
         ctx.fillText(dialog, 180, 125);
       }
-
       requestRef.current = requestAnimationFrame(loop);
     }
 
